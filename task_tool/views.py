@@ -1,8 +1,8 @@
 # task-prioritization-tool/views.py
 
 """This module provides view to manage the task table."""
-from PyQt5.QtCore import Qt
-from PyQt5.QtWidgets import (
+from PyQt6.QtCore import Qt
+from PyQt6.QtWidgets import (
     QAbstractItemView,
     QDialog,
     QDialogButtonBox,
