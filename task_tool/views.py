@@ -16,6 +16,7 @@ from PyQt6.QtWidgets import (
     QVBoxLayout,
     QWidget,
 )
+from PyQt6.QtGui import QStandardItemModel, QStandardItem
 
 from .model import TasksModel
 
@@ -40,7 +41,7 @@ class Window(QMainWindow):
         # Create the table view widget
         self.table = QTableView()
         self.table.setModel(self.tasksModel.model)
-        self.table.setSelectionBehavior(QAbstractItemView.SelectRows)
+        self.table.selectionModel().setSelectionMode(self.table.selectionModel.SelectionMode.SelectRows)
         self.table.resizeColumnsToContents()
         # Create buttons
         self.addButton = QPushButton("Add...")
