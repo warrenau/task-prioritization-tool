@@ -2,8 +2,8 @@
 
 """This module provides a model to manage the tasks table"""
 
-from PyQt6.QtCore import Qt
-from PyQt6.QtSql import QSqlTableModel
+from PyQt5.QtCore import Qt
+from PyQt5.QtSql import QSqlTableModel
 
 class TasksModel:
     def __init__(self):
@@ -14,11 +14,11 @@ class TasksModel:
         """Create and set up the model"""
         tableModel = QSqlTableModel()
         tableModel.setTable("tasks")
-        tableModel.setEditStrategy(QSqlTableModel.EditStrategy.OnFieldChange)
+        tableModel.setEditStrategy(QSqlTableModel.OnFieldChange)
         tableModel.select()
         headers = ("ID", "Name", "Job", "Email")
         for columnIndex, header in enumerate(headers):
-            tableModel.setHeaderData(columnIndex, Qt.Orientation.Horizontal, header)
+            tableModel.setHeaderData(columnIndex, Qt.Horizontal, header)
         return tableModel
     
     def addTask(self,data):

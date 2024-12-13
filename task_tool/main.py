@@ -4,7 +4,7 @@
 
 import sys
 
-from PyQt6.QtWidgets import QApplication
+from PyQt5.QtWidgets import QApplication
 
 from .database import createConnection
 from .views import Window

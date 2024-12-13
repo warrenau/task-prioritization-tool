@@ -1,8 +1,8 @@
 # task-prioritization-tool/views.py
 
 """This module provides view to manage the task table."""
-from PyQt6.QtCore import Qt
-from PyQt6.QtWidgets import (
+from PyQt5.QtCore import Qt
+from PyQt5.QtWidgets import (
     QAbstractItemView,
     QDialog,
     QDialogButtonBox,
@@ -16,7 +16,6 @@ from PyQt6.QtWidgets import (
     QVBoxLayout,
     QWidget,
 )
-from PyQt6.QtGui import QStandardItemModel, QStandardItem
 
 from .model import TasksModel
 
@@ -41,7 +40,7 @@ class Window(QMainWindow):
         # Create the table view widget
         self.table = QTableView()
         self.table.setModel(self.tasksModel.model)
-        self.table.selectionModel().setSelectionMode(self.table.selectionModel.SelectionMode.SelectRows)
+        self.table.setSelectionBehavior(QAbstractItemView.SelectRows)
         self.table.resizeColumnsToContents()
         # Create buttons
         self.addButton = QPushButton("Add...")
