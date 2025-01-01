@@ -110,16 +110,22 @@ class AddDialog(QDialog):
         """Setup the Add Task dialog's GUI."""
         # Create line edits for data fields
         self.nameField = QLineEdit()
-        self.nameField.setObjectName("Name")
-        self.jobField = QLineEdit()
-        self.jobField.setObjectName("Job")
-        self.emailField = QLineEdit()
-        self.emailField.setObjectName("Email")
+        self.nameField.setObjectName("Task")
+        self.dateField = QLineEdit()
+        self.dateField.setObjectName("Due Date")
+        self.timeField = QLineEdit()
+        self.timeField.setObjectName("Est Completion Time")
+        self.progressField = QLineEdit()
+        self.progressField.setObjectName("Progress")
+        self.importanceField = QLineEdit()
+        self.importanceField.setObjectName("Importance")
         # Lay out the data fields
         layout = QFormLayout()
-        layout.addRow("Name:", self.nameField)
-        layout.addRow("Job:", self.jobField)
-        layout.addRow("Email:", self.emailField)
+        layout.addRow("Task:", self.nameField)
+        layout.addRow("Due Date:", self.dateField)
+        layout.addRow("Est Completion Time:", self.timeField)
+        layout.addRow("Progress:", self.progressField)
+        layout.addRow("Importance:", self.importanceField)
         self.layout.addLayout(layout)
         # Add standard buttons to the dialog and connect them
         self.buttonsBox = QDialogButtonBox(self)
@@ -134,7 +140,7 @@ class AddDialog(QDialog):
     def accept(self):
         """Accept the data provided through the dialog."""
         self.data = []
-        for field in (self.nameField, self.jobField, self.emailField):
+        for field in (self.nameField,self.dateField,self.timeField,self.progressField,self.importanceField):
             if not field.text():
                 QMessageBox.critical(
                     self,

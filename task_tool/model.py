@@ -16,7 +16,7 @@ class TasksModel:
         tableModel.setTable("tasks")
         tableModel.setEditStrategy(QSqlTableModel.OnFieldChange)
         tableModel.select()
-        headers = ("ID", "Name", "Job", "Email")
+        headers = ("id","Task", "Due Date", "Est Completion Time", "Progress", "Importance", "Priority")
         for columnIndex, header in enumerate(headers):
             tableModel.setHeaderData(columnIndex, Qt.Horizontal, header)
         return tableModel
@@ -27,6 +27,7 @@ class TasksModel:
         self.model.insertRows(rows, 1)
         for column, field in enumerate(data):
             self.model.setData(self.model.index(rows,column+1), field)
+        self.model.setData(self.model.index(rows,6), 0)
         self.model.submitAll()
         self.model.select()
 

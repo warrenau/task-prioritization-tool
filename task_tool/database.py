@@ -28,9 +28,12 @@ def _createTasksTable():
         """
         CREATE TABLE IF NOT EXISTS tasks (
             id INTEGER PRIMARY KEY AUTOINCREMENT UNIQUE NOT NULL,
-            name VARCHAR(40) NOT NULL,
-            job VARCHAR(50),
-            email VARCHAR(40) NOT NULL
+            task VARCHAR(40) NOT NULL,
+            date VARCHAR(50),
+            time VARCHAR(40) NOT NULL,
+            progress VARCHAR(40) NOT NULL,
+            importance VARCHAR(40) NOT NULL,
+            priority VARCHAR(40) 
         )
         """
     )
