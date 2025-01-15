@@ -27,6 +27,16 @@ The below shows an example of the output table list the user can interact with.
 | --- | --- | --- | --- | --- | --- |
 | Chapter 1 | 2024-09-30 | 6 hours | 30% | 80 | Dissertation |
 
+## prioritization function
+- must calculate priority score upon initial task creation
+- must re-calculate priority score on edit
+- the table must be resorted every time priority scores are calculated to rank from highest priority to lowest
+
+This will probably take two functions?
+1. one function to calc priority score
+2. another function to update table and ranking on edit/new task
+
+Calculation of priority and sorting functions should be called during new task creation and any time a task is edited. I don't think I will need to optimize the sorter very much. There should not be so many tasks that it is a problem for a modern computer.
 
 ## math
 The priority score is based on the urgency (the time needed to complete the task compared to the time available until the task is due) and the importance of the task.
