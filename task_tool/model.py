@@ -31,6 +31,10 @@ class TasksModel:
         self.model.submitAll()
         self.model.select()
 
+    def scoreTask(self, row):
+        """Calculate priority score for the task."""
+        
+
     def deleteTask(self, row):
         """Remove a task from the database."""
         self.model.removeRow(row)
